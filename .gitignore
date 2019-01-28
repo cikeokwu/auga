@@ -2,4 +2,4 @@
 *.pyc
 *.pyo
 __pychache__
-__init__
+__init__.py

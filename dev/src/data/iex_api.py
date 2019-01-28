@@ -1,4 +1,5 @@
 import pandas_datareader.data as web
+import database as db
 
 import datetime
 
@@ -8,4 +9,10 @@ end = datetime.datetime(2019, 1, 1)
 
 f = web.DataReader('MSFT', 'iex', start, end)
 
-print(f.loc['2018-01-17']['open'])
+close  = f.to_dict()["close"]
+
+db.Database.initialize()
+
+db.Database.insert('close', {"tid": 0, "ticker": 'MSFT', "data": close, "_id":0} )
+
+
