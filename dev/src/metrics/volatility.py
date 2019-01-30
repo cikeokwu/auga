@@ -1,5 +1,7 @@
 import math
 import utils
+import dev.src.data.dao as dao
+from datetime import date
 
 def lineFinder(Point1, Point2):
     slope = (Point2[1] - Point1[1]) / (Point2[0] - Point1[0])
@@ -21,3 +23,6 @@ def volatilityFinder(PriceList):
     Line = lineFinder([xaxis[0], PriceList[0]], [xaxis[len(xaxis) - 1], PriceList[len(PriceList) - 1]])
     ResidArray = residualArray(xaxis, Line, PriceList)
     return math.sqrt(utils.var(ResidArray))
+
+
+dao.saveMetric("volatility",{"tid":0, "ticker":"MSFT", "data":{ str(date.today()) :volatilityFinder(dao.getClosePriceData(0))}})

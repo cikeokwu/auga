@@ -3,7 +3,16 @@ Data Access object designed to provide an interface for metrics to acess certain
 database and
 
 """
-import database as db
+import dev.src.data.storage.database as db
 
-def getData(collection, ticker):
-    db.find_one(collection,{tic})
+db.Database.initialize()
+
+def getData(collection, tid):
+    return db.Database.find_one(collection,{"tid":tid})
+
+def getClosePriceData(tid):
+    return list(db.Database.find_one("close",{"tid":tid})['data'].values())
+
+
+def saveMetric(collection,data):
+    db.Database.insert(collection,data)
