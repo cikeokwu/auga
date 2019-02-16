@@ -6,7 +6,7 @@
 0. Python3
 1. Scipy Package
 2. Python-Flask
-3. MongoDB
+3. MongoDBgit
 4. pymongo
 5. pandasdatareader
 6. iexfinance (pip install iexfinance)
