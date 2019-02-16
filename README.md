@@ -9,3 +9,4 @@
 3. MongoDB
 4. pymongo
 5. pandasdatareader
+6. iexfinance (pip install iexfinance)
