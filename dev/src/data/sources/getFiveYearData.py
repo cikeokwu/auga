@@ -26,7 +26,7 @@ def get5yHistorical(stockSymbols, totalTickers):
             pass
         
     return bigDF
-result=get5yHistorical(stockSymbols,totalTickers)
-
+result = get5yHistorical(stockSymbols,totalTickers)
+result = result.dropna()
 result.to_csv('iexRaw.csv')
 
