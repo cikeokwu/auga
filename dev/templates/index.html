@@ -1,8 +1,23 @@
-<html>
+<!DOCTYPE html>
+{% import 'bootstrap/wtf.html' as wtf %}
+<html lang="en">
 <head>
-    <title>tid: {{ tid }}</title>
+    <meta charset="utf-8">
+    <title>abcd {{ tid }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" >
+
 </head>
 <body>
-<h1>Volatility: {{ info.volatility }}</h1>
+
+<form method="POST" action="/index">
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.ticker) }}
+    {{ wtf.form_field(form.date) }}
+    {{ wtf.form_field(form.submit) }}
+
+</form>
+
 </body>
 </html>
