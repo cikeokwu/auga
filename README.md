@@ -1,6 +1,6 @@
 # auga
 
-# Tool to help organize market data for data analysis
+# Tool to help organize stock market data for data analysis
 
 ## Dependencies:
 0. Python3
