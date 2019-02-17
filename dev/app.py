@@ -25,18 +25,18 @@ def index():
 @app.route('/about')
 def about():
 	return render_template('about.html')
-@app.route('/plot')
+@app.route('/plot/')
 def plot():
 	currentTickerName = request.args.get("feature_name")
 	if currentTickerName == None:
 		currentTickerName = "SPY"
 
 	plot = generateCandleStick(currentTickerName,datapath)
-	js_resources = INLINE.render_js()
-	css_resources = INLINE.render_css()	
+	
 	# Embed plot into HTML via Flask Render
 	script, div = components(plot)
-
+	js_resources = INLINE.render_js()
+	css_resources = INLINE.render_css()	
 	html = render_template(
 	'plot.html',
 	plot_script=script,

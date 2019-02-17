@@ -8,8 +8,8 @@ from bokeh.plotting import figure, show, output_file
 #returns html code for a dynamic candlestick, to integrate with flask.
 #takes in user necessary form. 
 
-def generateCandleStick(userticker):
-	fullStockDF = pd.read_csv('iexRaw.csv')
+def generateCandleStick(userticker,datapath):
+	fullStockDF = pd.read_csv(datapath+'iexRaw.csv')
 	try:
 		chosenStock = fullStockDF[fullStockDF['ticker']==userticker]
 		chosenStock['date']=pd.to_datetime(chosenStock['date'],infer_datetime_format=True)
