@@ -10,3 +10,4 @@
 4. pymongo
 5. pandasdatareader
 6. iexfinance (pip install iexfinance)
+7. matplotlib-finance (pip install mpl-finance)
