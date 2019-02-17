@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template,redirect, url_for, request
 import pandas as pd
 from bokeh.resources import INLINE
 from bokeh.embed import components
@@ -12,12 +12,16 @@ app = Flask(__name__)
 datapath = "~/Desktop/projects/python/auga/dev/src/data/sources/"
 # Create the main plot
 
+mymorals= 'SPY' #global variables are great when you have 56 mins left
 
 # Index page
 @app.route('/')
 def index():
 	# Determine the selected feature
-	
+	if request.method == 'POST':
+		mymorals= request.form
+		return redirect(url_for('plot'))
+
 	# Create the plot
 	
 	return render_template("index.html")
@@ -25,12 +29,18 @@ def index():
 @app.route('/about')
 def about():
 	return render_template('about.html')
-@app.route('/plot/')
+
+
+
+@app.route('/plot/',methods=['POST','GET'])
 def plot():
-	currentTickerName = request.args.get("feature_name")
+	currentTickerName = None
+	if request.method == 'POST':
+		currentTickerName= request.form['ticker']
+	 
 	if currentTickerName == None:
 		currentTickerName = "SPY"
-
+	print("\n current ticker is: ", currentTickerName)
 	plot = generateCandleStick(currentTickerName,datapath)
 	
 	# Embed plot into HTML via Flask Render
