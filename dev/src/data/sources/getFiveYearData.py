@@ -13,7 +13,7 @@ totalTickers = len(stockSymbols)
 
 
 def get5yHistorical(stockSymbols, totalTickers):
-   	bigDF = Stock(stockSymbols[0],output_format="pandas").get_chart(range='5y')
+    bigDF = Stock(stockSymbols[0],output_format="pandas").get_chart(range='5y')
     bigDF['ticker']=stockSymbols[0]
     for i in range(1,totalTickers):
         try:
@@ -24,7 +24,7 @@ def get5yHistorical(stockSymbols, totalTickers):
         except KeyError:
             print('\n this key had an error:', stockSymbols[i], 'at position:',i)
             pass
-        
+
     return bigDF
 result = get5yHistorical(stockSymbols,totalTickers)
 result = result.dropna()

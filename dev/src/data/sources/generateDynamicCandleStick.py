@@ -30,9 +30,10 @@ def generateCandleStick(userticker):
 		p.vbar(chosenStock.date[inc], w, chosenStock.open[inc], chosenStock.close[inc], fill_color="#D5E1DD", line_color="black")
 		p.vbar(chosenStock.date[dec], w, chosenStock.open[dec], chosenStock.close[dec], fill_color="#F2583E", line_color="black")
 		
-		output_file("AUGA-"+userticker+".html", title=("auga"+userticker))
+		#output_file("AUGA-"+userticker+".html", title=("auga"+userticker))
 
-		show(p)
+		#show(p)
+		return p
 
 	except NameError:
 		print("Your ticker isnt found. Choose another")
