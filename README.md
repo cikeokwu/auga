@@ -11,4 +11,10 @@
 5. pandasdatareader
 6. iexfinance (pip install iexfinance)
 7. Bokeh
+8. jupyter notebooks
 
+
+
+## Resources
+1. implement many charts for comaprison-- the python code is here: https://bokeh.pydata.org/en/latest/docs/gallery/stocks.html
+2. Flask tutorial by sentdex
