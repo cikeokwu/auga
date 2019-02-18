@@ -18,3 +18,8 @@
 ## Resources
 1. implement many charts for comaprison-- the python code is here: https://bokeh.pydata.org/en/latest/docs/gallery/stocks.html
 2. Flask tutorial by sentdex
+
+## Todo List
+1. fix navigation
+2. make portfolio page, where you can input x tickers and have the output as a chart.
+3. Make Stock ticker dashboard
