@@ -13,6 +13,9 @@
 7. Bokeh
 8. jupyter notebooks
 
+## Features:
+embedded stock chart in Flask App
+five year stock data generator (run in auga/dev/src/data/source/generatefiveyeardata.py)
 
 
 ## Resources
