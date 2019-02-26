@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source ./bin/activate
+export FLASK_APP=./dev/app.py
+export FLASK_ENV=development
+python -m flask run
+
