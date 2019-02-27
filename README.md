@@ -6,29 +6,30 @@
 
 ## Getting set up
 1. Clone this repository. Ex:
-''' bash
+``` bash
 git clone ssh@github.com:ChristianIkeokwu/auga
-'''
+```
 
 2. Set up a virtual python environment using the command:
-''' bash
+``` bash
 python3 -m venv auga/
-'''
+```
 
 3. cd into that directory, then enter the virtual environment you created:
-''' bash
+``` bash
 cd auga/
 source bin/activate
+```
 
-4. Install all the required python modules:
-''' bash
+5. Install all the required python modules:
+``` bash
 pip3 install -r ./dev/requirements.txt
-'''
+```
 
 5. Then, simply call the startup script:
-'''bash
-./start
-'''
+``` bash
+run
+```
 
 
 ## Dependencies:
